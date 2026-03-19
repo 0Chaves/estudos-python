@@ -52,8 +52,11 @@ print("---------Desafio - Imprimir os algarismos de um número----------")
 def alg(numero):
     if(numero >= 0 and numero <= 1000):
         unidade = numero % 10
-        dezena = int(((numero % 100) - unidade ) / 10)
-        centena = int(((numero % 1000) - (numero % 100) ) / 100)
+        dezena = int((numero % 100) / 10)
+        if numero == 1000:
+            centena = 10
+        else:
+            centena = int(numero / 100)
         return [unidade, dezena, centena]
     return None
 
