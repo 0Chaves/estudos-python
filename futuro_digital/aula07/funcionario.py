@@ -1,11 +1,29 @@
-class Funcionario:
-    meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+from enum import Enum, unique
 
+@unique #não permite que haja valores repetidos no enum
+class Meses(Enum):
+    JANEIRO = 1
+    FEVEREIRO = 2
+    MARÇO = 3
+    ABRIL = 4
+    MAIO = 5
+    JUNHO = 6
+    JULHO = 7
+    AGOSTO = 8
+    SETEMBRO = 9
+    OUTUBRO = 10
+    NOVEMBRO = 11
+    DEZEMBRO = 12
+
+class Funcionario:
+    meses = [mes.name for mes in Meses]
+
+    __slots__ = ["nome", "email", "valor_hora"] #proibe o objeto criado de criar novos atributos em tempo de execução, e evita criação de dicionario para os atributos
     def __init__(self, nome, email, valor_hora):
-        self.__nome = nome
+        self.nome = nome
         self.email = email
         self.valor_hora = valor_hora
-        self.horas_trabalhadas = {}
+        self.horas_trabalhadas: dict [str, int] = {}
         for mes in self.meses:
             self.horas_trabalhadas[mes] = 0
 
@@ -13,11 +31,14 @@ class Funcionario:
         print(f"{self.horas_trabalhadas}")
 
     def cadastrar_horas (self, mes, horas):
-        self.horas_trabalhadas[mes] = horas
-        print(f"Confirma: {self.horas_trabalhadas}")
+        if mes in self.meses:
+            self.horas_trabalhadas[mes] = horas
+            print(f"Confirma: {self.horas_trabalhadas}")
         
-    def salario_mensal (self):
-        pass
+    def salario_mensal (self, mes):
+        if mes in self.meses:
+            salario = self.horas_trabalhadas[mes] * self.valor_hora
+            return salario
     
     def relatorio (self):
         pass
