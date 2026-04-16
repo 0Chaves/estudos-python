@@ -1,6 +1,6 @@
 from enum import Enum, unique
 
-class GeneroFilme(Enum):
+class Genero(Enum):
     ACAO = "Ação"
     AVENTURA = "Aventura"
     COMEDIA = "Comédia"
