@@ -1,11 +1,10 @@
 from dataclasses import dataclass
-import datetime
-
+from datetime import date
 @dataclass(slots=True)
 class Capitulo:
     titulo: str
     numero: int
-    data: datetime.date = datetime.date.today()
+    data: date = date.today()
     visto: bool = False
 
     def alternar_visto(self):

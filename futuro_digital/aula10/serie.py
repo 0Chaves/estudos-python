@@ -27,5 +27,22 @@ class Serie:
             return True
         return False
     
+    def verificar_visto(self):
+        for temporada in self.temporadas:
+            if temporada.visto == False:
+                self.visto = False
+                return True
+        self.visto = True
+        return True
+    
     def alternar_visto(self):
-        pass
+        if self.visto == False:
+            for temporada in self.temporadas:
+                if temporada.visto == False:
+                    temporada.alternar_visto()
+        if self.visto == True:
+             for temporada in self.temporadas:
+                if temporada.visto == True:
+                    temporada.alternar_visto()
+        self.visto = not self.visto
+        return True
