@@ -32,7 +32,7 @@ df_categorical_encoded = df_categorical.apply(le.fit_transform)
 scaler = StandardScaler()
 df_numerical_scaled = scaler.fit_transform(df_numerical)
 
-df_processed = pd.concat([pd.DataFrame(df_numerical_scaled, columns=df_numerical_scaled.columns), df_categorical_encoded], axis=1)
+df_processed = pd.concat([pd.DataFrame(df_numerical_scaled, columns=df_numerical.columns), df_categorical_encoded], axis=1)
 
 
 # # Dividir os dados em features e target
@@ -45,7 +45,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # # Treinar um modelo de classificação
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeClassifier
+# from sklearn.tree import DecisionTreeClassifier
 
 model = RandomForestClassifier(random_state=random_state)
 
