@@ -7,5 +7,5 @@ class Audio_Livro(Livro):
         self.tempoLeitura = tempoLeitura
         self.narrador = narrador
 
-    def reproduzir(self, velocidade: int = 1) -> None:
+    def reproduzir(self, velocidade: int = 1):
         print(f"O livro está sendo lido na velocidade {velocidade}")

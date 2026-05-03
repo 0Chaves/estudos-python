@@ -7,5 +7,5 @@ class Midia(ABC):
     ano: int
 
     @abstractmethod
-    def reproduzir(self) -> None:
+    def reproduzir(self):
         pass

@@ -23,3 +23,4 @@ if __name__ == "__main__":
 
     # Testando a reprodução do audiolivro
     audio_livro1.reproduzir()
+    print(audio_livro1.reproduzir())
