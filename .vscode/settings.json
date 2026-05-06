@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda"
+=======
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.defaultPackageManager": "ms-python.python:pip"
+>>>>>>> 91fad0972066ca1651a1c8d78632a6727e174903
 }
