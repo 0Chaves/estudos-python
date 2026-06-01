@@ -1,0 +1,5 @@
+# Ignorar arquivos csv e imagens de deep learning
+**/*.csv
+**/*.jpg
+**/*.jpeg
+**/*.png
